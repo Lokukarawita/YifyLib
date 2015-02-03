@@ -1,13 +1,13 @@
 ##NOTE
-_Yify API v1 is schedule to be deprecated by the Yify authors. Once the API gets deprecated this library will not be able to function correctly. See [Coming Soon](/README.md#comming-soon) section for future developments._
+_YifyLib is currently in Alpha phase and only capable of accessing Yify API v1 only. Yify API v1 is schedule to be deprecated by the Yify authors. Once the API gets deprecated this library will not be able to function correctly. See [Coming Soon](/README.md#comming-soon) section for future developments._
 
 # YifyLib
-**.NET library to access [Yify torrent](https://yts.re/) API v1.**
+**.NET library to access [Yify torrent](https://yts.re/) API.**
 
 This provide access to basic functionalities of [Yify torrent API v1](https://yts.re/api) like,
 
-* Searching for movies (`ListMovies`)
-* Getting movie details (`GetMovieDetails`)
+* Searching for movies ([`ListMovies`] (/README.md#searching-for-movies-listmovies))
+* Getting movie details ([`GetMovieDetails`] (/README.md#getting-movie-details-getmoviedetails))
 * Listing upcoming movies (`GetUpcomingMovies`)
 * Listing comments for a movie (`GetComments`)
 * Getting user profile (`GetProfile`)
@@ -17,7 +17,7 @@ This provide access to basic functionalities of [Yify torrent API v1](https://yt
 * Vote for request (`VoteRequest `)
 * Requesting a movie  (`MakeRequest `)
 
-**Etc…**
+Etc…
 
 ##Installing
 
@@ -102,6 +102,7 @@ List<ListMovieItem> searchResult = yify.ListMovies(
 Movie movie = yify.GetMovieDetails(123, false);
 ```
 
-# Comming Soon
+# Coming Soon
 * Provide v1 API in the library to access the Yify torrent data via v2 API
 * Support for Yify API v2
+* Examples for rest of the functionality.
