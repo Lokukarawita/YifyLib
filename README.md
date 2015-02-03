@@ -1,5 +1,5 @@
 ##NOTE
-_Yify API v1 is schedule to be deprecated by the Yify authors. Once the API gets deprecated this library will not be able to function correctly. See Coming Soon section for future developments._
+_Yify API v1 is schedule to be deprecated by the Yify authors. Once the API gets deprecated this library will not be able to function correctly. See [Coming Soon](/README.md#comming-soon) section for future developments._
 
 # YifyLib
 **.NET library to access [Yify torrent](https://yts.re/) API v1.**
