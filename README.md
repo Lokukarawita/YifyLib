@@ -103,6 +103,7 @@ Movie movie = yify.GetMovieDetails(123, false);
 ```
 
 # Coming Soon
-* Provide v1 API in the library to access the Yify torrent data via v2 API
-* Support for Yify API v2
+* ~~Provide v1 API in the library to access the Yify torrent data via v2 API~~
+* Deprecate v1 code and implement support for v2
+* ~~Support for Yify API v2~~
 * Examples for rest of the functionality.
