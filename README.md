@@ -8,7 +8,7 @@ See [Coming Soon](/README.md#coming-soon) section for future developments._
 This provide access to basic functionalities of [Yify torrent API v1](https://yts.to/api) like,
 
 * Searching for movies ([`ListMovies`] (/README.md#searching-for-movies-listmovies))
-* Getting movie details ([`GetMovie`] (/README.md#getting-movie-details-getmovie))
+* Getting movie details ([`GetMovie`] (/README.md#getting-movie-details))
 
 Etc…
 
@@ -84,7 +84,7 @@ List<ListMovie> result = y.ListMovies("Bourne",
   orderBy: YifyLib.SortOrder.Asc);
 ```
 
-####Getting movie (`GetMovie`)
+####Getting movie details (`GetMovie`)
 
 * Getting movie details for movie 100.
 
