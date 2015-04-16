@@ -74,7 +74,7 @@ List<ListMovie> result = y.ListMovies("Bourne",
 
 ######Sorting and Ordering search result
 
-- To Sort the search results by a particular field use `ListMovieSort` enum.
+- To Sort the search results by a particular field use `SearchResultSort` enum.
 - To Order the search result in ascending or descending order use `SortOrder` enum.
 
 Search movies where movie tile contains the word `Bourne`, sorted by added date and orderd in ascending order.
