@@ -44,14 +44,14 @@ And that's it!.
 ##Examples
 
 ####Namespaces
-```
+```c#
 using YifyLib;
 using YifyLib.Data;
 ```
 
 ####Intialization
 
-```
+```c#
 Yify yify = new Yify();
 ```
 
@@ -59,14 +59,14 @@ Yify yify = new Yify();
 
 #####Basic Search
 * Search for movies where movie tile contains the word `Bourne`.
-```
+```c#
 List<ListMovie> searchResult = yify.ListMovies("Bourne");
 ```
 
 #####Advanced Search
 
 * Search for movies where movie tile contains the word `Bourne`, `720p` quality and with minimum rating of 5.
-```
+```c#
 List<ListMovie> result = y.ListMovies("Bourne", 
   quality: "720p", 
   minimumRating: 5);
@@ -78,7 +78,7 @@ List<ListMovie> result = y.ListMovies("Bourne",
 - To Order the search result in ascending or descending order use `SortOrder` enum.
 
 Search movies where movie tile contains the word `Bourne`, sorted by added date and orderd in ascending order.
-```
+```c#
 List<ListMovie> result = y.ListMovies("Bourne", 
   sortBy: SearchResultSort.DateAdded, 
   orderBy: YifyLib.SortOrder.Asc);
@@ -88,7 +88,7 @@ List<ListMovie> result = y.ListMovies("Bourne",
 
 * Getting movie details for movie 100.
 
-```
+```c#
 Movie m = y.GetMovie(100);
 ```
 
