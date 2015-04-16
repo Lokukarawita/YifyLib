@@ -3,9 +3,11 @@ _Since deprecation of API v1 by Yts, YifyLib (since v1.1) no longer support the 
 See [Coming Soon](/README.md#coming-soon) section for future developments._
 
 # YifyLib
+
+##Introduction
 **.NET library to access [Yify torrent](https://yts.to/) API.**
 
-This provide access to basic functionalities of [Yify torrent API v1](https://yts.to/api) like,
+This provide access to basic functionalities of [Yify torrent API](https://yts.to/api) like,
 
 * Searching for movies ([`ListMovies`] (/README.md#searching-for-movies-listmovies))
 * Getting movie details ([`GetMovie`] (/README.md#getting-movie-details-getmovie))
@@ -35,11 +37,21 @@ You can install this library using either
 
 ##Getting Started
 
-From any type of .NET compatible project.
+####Prerequisites
+
+* .NET Framework 4.5 or later [Download from here] (https://www.microsoft.com/en-us/download/details.aspx?id=30653)
+
+**_If you are planning to use more advanced features of YTS API v2 then you need:_**
+
+* Application Key from YTS [Request for one here] (https://yts.to/contact)
+
+####Installing
 
 * Install `YifyLib`
 
 And that's it!.
+
+---
 
 ##Examples
 
