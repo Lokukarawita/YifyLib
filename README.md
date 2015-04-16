@@ -8,7 +8,7 @@ See [Coming Soon](/README.md#coming-soon) section for future developments._
 This provide access to basic functionalities of [Yify torrent API v1](https://yts.to/api) like,
 
 * Searching for movies ([`ListMovies`] (/README.md#searching-for-movies-listmovies))
-* Getting movie details ([`GetMovie`] (/README.md#getting-movie-details))
+* Getting movie details ([`GetMovie`] (/README.md#getting-movie-details-getmovie))
 
 Etc…
 
