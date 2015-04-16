@@ -3,7 +3,7 @@ _Since deprecation of API v1 by Yts.re YifyLib (since v1.1) no longer support th
 See [Coming Soon](/README.md#coming-soon) section for future developments._
 
 # YifyLib
-**.NET library to access [Yify torrent](https://yts.re/) API.**
+**.NET library to access [Yify torrent](https://yts.to/) API.**
 
 This provide access to basic functionalities of [Yify torrent API v1](https://yts.to/api) like,
 
