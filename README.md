@@ -5,9 +5,9 @@ See [Coming Soon](/README.md#coming-soon) section for future developments._
 # YifyLib
 
 ##Introduction
-**.NET library to access [Yify torrent](https://yts.to/) API.**
+**.NET library to access [Yts](https://yts.to/) (formaly Yify) API.**
 
-This provide access to basic functionalities of [Yify torrent API](https://yts.to/api) like,
+This provide access to functionalities of [Yts API](https://yts.to/api) like,
 
 * Searching for movies ([`ListMovies`] (/README.md#searching-for-movies-listmovies))
 * Getting movie details ([`GetMovie`] (/README.md#getting-movie-details-getmovie))
