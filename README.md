@@ -67,7 +67,7 @@ using YifyLib.Data;
 Yify yify = new Yify();
 ```
 
-**_If you are planning to use more advanced features of YTS API v2 then you need initialize as:_**
+**_If you are planning to use more advanced features of YTS API v2 then you need to initialize as:_**
 ```c#
 Yify yify = new Yify();
 yify.ApplicationKey = "<Your Application Key>";
