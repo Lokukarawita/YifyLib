@@ -39,11 +39,11 @@ You can install this library using either
 
 ####Prerequisites
 
-* .NET Framework 4.5 or later [Download from here] (https://www.microsoft.com/en-us/download/details.aspx?id=30653)
+* .NET Framework 4.5 or later (Download from [here] (https://www.microsoft.com/en-us/download/details.aspx?id=30653))
 
 **_If you are planning to use more advanced features of YTS API v2 then you need:_**
 
-* Application Key from YTS [Request for one here] (https://yts.to/contact)
+* Application Key from YTS (Request one from [here] (https://yts.to/contact))
 
 ####Installing
 
