@@ -66,6 +66,10 @@ using YifyLib.Data;
 ```c#
 Yify yify = new Yify();
 ```
+__or__
+```c#
+Yify yify = new Yify(new Uri("https://yts.to/api/v2/"));
+```
 
 **_If you are planning to use more advanced features of YTS API v2 then you need to initialize as:_**
 ```c#
