@@ -1,0 +1,1218 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YifyLib</name>
+    </assembly>
+    <members>
+        <member name="T:YifyLib.Api.RequestUriHelper">
+            <summary>
+            Represent requests made to YTS API.
+            </summary>
+        </member>
+        <member name="P:YifyLib.Api.RequestUriHelper.RelativePath">
+            <summary>
+            Relative URI path
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.Actor">
+            <summary>
+            Represent an actor
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.Base.AbstractPerson">
+            <summary>
+            Abstract Person in YTS
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.Base.AbstractPerson.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractPerson.Name">
+            <summary>
+             Get or set name
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractPerson.SmallImage">
+            <summary>
+             Get or set small avatar image URL
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractPerson.MediumImage">
+            <summary>
+            Get or set medium avatar image URL
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.Actor.#ctor">
+            <summary>
+            Instantiate a default instance of Actor
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.Actor.ToString">
+            <summary>
+            Get a string representation of this object
+            </summary>
+            <returns>Object in string</returns>
+        </member>
+        <member name="P:YifyLib.Data.Actor.CharacterName">
+            <summary>
+            Get or set the name of the character in the movie
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.Base.AbstractImage">
+            <summary>
+            Abstract Image from YTS
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.Base.AbstractImage.#ctor">
+            <summary>
+             Initializes a new instance of the AbstractImage class.
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.Base.AbstractImage.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractImage.Url">
+            <summary>
+            URL of the image
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractImage.ImageSize">
+            <summary>
+            Image Size
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.Base.AbstractMovie">
+            <summary>
+            Abstract movie
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.Base.AbstractMovie.#ctor">
+            <summary>
+             Initializes a new instance of the AbstractMovie class.
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.Base.AbstractMovie.ToString">
+            <summary>
+            Get a string representation of this object
+            </summary>
+            <returns>Object in string</returns>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractMovie.ID">
+            <summary>
+            Get or set the movie id
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractMovie.Url">
+            <summary>
+            Get or set the YTS page URL for the movie
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractMovie.IMDBCode">
+            <summary>
+            Get or set the IMDB code
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractMovie.Title">
+            <summary>
+            Get or set the movie title
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractMovie.TitleLong">
+            <summary>
+            Get or set the long movie title.
+            Movies from YTS include movie year inside the brackets
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractMovie.Year">
+            <summary>
+            Get or set the movie year
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractMovie.Rating">
+            <summary>
+            Get or set the rating
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractMovie.Runtime">
+            <summary>
+            Get or set the runtime of the movie
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractMovie.Genres">
+            <summary>
+            Get a list of genres for the movie
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractMovie.Images">
+            <summary>
+            Get a list of images for the movie
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.Base.AbstractUser">
+            <summary>
+            Abstract User
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.Base.AbstractUser.#ctor">
+            <summary>
+             Initializes a new instance of the AbstractUser class.
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.Base.AbstractUser.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractUser.Username">
+            <summary>
+            Get or set the username
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.Base.AbstractYifyMovie">
+            <summary>
+            Abstract Movie of from YTS
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.Base.AbstractYifyMovie.#ctor">
+            <summary>
+             Initializes a new instance of the AbstractYifyMovie class.
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractYifyMovie.Language">
+            <summary>
+            Get or set the language
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractYifyMovie.MPARating">
+            <summary>
+            Get or set the MPA rating
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractYifyMovie.Torrents">
+            <summary>
+            Get a list of torrents belonging to this movie
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractYifyMovie.DateUploaded">
+            <summary>
+            Get or set the date uploaded
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractYifyMovie.DateUploadedUnix">
+            <summary>
+            Get or set the date uploaded in unix format
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.Base.AbstractYifyUser">
+            <summary>
+            Abstract User of from YTS
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.Base.AbstractYifyUser.#ctor">
+            <summary>
+             Initializes a new instance of the AbstractImage class.
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.Base.AbstractYifyUser.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractYifyUser.ID">
+            <summary>
+            Get or set the user id
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractYifyUser.Group">
+            <summary>
+            Get or set the group
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Base.AbstractYifyUser.Avatars">
+            <summary>
+            Get or set the user avatar
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.BookmarkedMovie">
+            <summary>
+            Represent a bookmarked movie
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.BookmarkedMovie.RTCriticsScore">
+            <summary>
+            Get or set Rotten Tomato critics score
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.BookmarkedMovie.RTCriticsRating">
+            <summary>
+            Get or set Rotten Tomato critics score
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.BookmarkedMovie.RTAudienceScore">
+            <summary>
+            Get or set Rotten Tomato audience score
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.BookmarkedMovie.RTAudienceRating">
+            <summary>
+            Get or set Rotten Tomato audience rating
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.BookmarkedMovie.State">
+            <summary>
+            Get or set the state
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.Comment">
+            <summary>
+            Represent a comment in YTS
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.Comment.ToString">
+            <summary>
+            Get a string representation of this object
+            </summary>
+            <returns>Object in string</returns>
+        </member>
+        <member name="P:YifyLib.Data.Comment.User">
+            <summary>
+            Get or set the commented user
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Comment.LikeCount">
+            <summary>
+            Get or set the like count for the comment
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Comment.CommentText">
+            <summary>
+            Get or set the comment text
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Comment.DateAdded">
+            <summary>
+            Get or set the date when the comment was added
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Comment.DateAddedUnix">
+            <summary>
+            Get or set the date when the comment was added in unix format
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.CommentUser">
+            <summary>
+            Represent a commented user
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.MovieImageType">
+            <summary>
+            Movie Image Type
+            </summary>
+        </member>
+        <member name="F:YifyLib.Data.MovieImageType.Background">
+            <summary>
+            Background Image. Backdrop image from YTS
+            </summary>
+        </member>
+        <member name="F:YifyLib.Data.MovieImageType.Cover">
+            <summary>
+            Cover Image. Usually DVD, Blue-ray cover.
+            </summary>
+        </member>
+        <member name="F:YifyLib.Data.MovieImageType.ScreenShot">
+            <summary>
+            Screenshot Image from the video file
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.ImageSize">
+            <summary>
+            Image Sizes
+            </summary>
+        </member>
+        <member name="F:YifyLib.Data.ImageSize.NotRelevent">
+            <summary>
+            Size is not relevant for particular type of image
+            </summary>
+        </member>
+        <member name="F:YifyLib.Data.ImageSize.Small">
+            <summary>
+            Small Image
+            </summary>
+        </member>
+        <member name="F:YifyLib.Data.ImageSize.Large">
+            <summary>
+            Large image
+            </summary>
+        </member>
+        <member name="F:YifyLib.Data.ImageSize.Medium">
+            <summary>
+            Medium image
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.ListMovie">
+            <summary>
+            Represent a search result
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.ListMovie.State">
+            <summary>
+            Get or set the state
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.Movie">
+            <summary>
+            Represent a YTS movie
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.Movie.#ctor">
+            <summary>
+            Instantiate a default instance of movie
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Movie.DownloadCount">
+            <summary>
+            Get or set the download count
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Movie.LikeCount">
+            <summary>
+            Get or set the like count
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Movie.RTCriticsScore">
+            <summary>
+            Get or set Rotten Tomato critics score
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Movie.RTCriticsRating">
+            <summary>
+            Get or set Rotten Tomato critics score
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Movie.RTAudienceScore">
+            <summary>
+            Get or set Rotten Tomato audience score
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Movie.RTAudienceRating">
+            <summary>
+            Get or set Rotten Tomato audience rating
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Movie.DescriptionIntro">
+            <summary>
+            Get or set YTS intro description
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Movie.DescriptionFull">
+            <summary>
+            Get or set YTS full description
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Movie.YTTrailerCode">
+            <summary>
+            Get or set YouTube trailer code
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Movie.Directors">
+            <summary>
+            Get a list of directors for the movie
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Movie.Actors">
+            <summary>
+            Get a list if actors in a movie
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.MovieImage">
+            <summary>
+            Represent an image of a movie
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.MovieImage.ToString">
+            <summary>
+            Get a string representation of this object
+            </summary>
+            <returns>Object in string</returns>
+        </member>
+        <member name="P:YifyLib.Data.MovieImage.ImageType">
+            <summary>
+            get or set the type of image
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.ParentalGuide">
+            <summary>
+            Represent parental guide for a movie
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.ParentalGuide.ToString">
+            <summary>
+            Get a string representation of this object
+            </summary>
+            <returns>Object in string</returns>
+        </member>
+        <member name="P:YifyLib.Data.ParentalGuide.Type">
+            <summary>
+            Get or set the type
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.ParentalGuide.Text">
+            <summary>
+            Get or set the guide text
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.Person">
+            <summary>
+            Represent a person.
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.Profile">
+            <summary>
+            Represent a profile in YTS
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Profile.IPString">
+            <summary>
+            Get or set the last visited IP in string notation. 
+            Ex 192.168.1.1
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Profile.IP">
+            <summary>
+            Get or set the last visited IP
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Profile.Email">
+            <summary>
+            Get or set the Email address
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Profile.UserKey">
+            <summary>
+            Get or set the user key
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.RegisterUser">
+            <summary>
+            Represent a Registered user in YTS
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.RegisterUser.UserKey">
+            <summary>
+            Get or set the user key
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.RegisterUser.Email">
+            <summary>
+            Get or set the email
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.Review">
+            <summary>
+            Represent a review of a movie
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.Review.ToString">
+            <summary>
+            Get a string representation of this object
+            </summary>
+            <returns>Object in string</returns>
+        </member>
+        <member name="P:YifyLib.Data.Review.User">
+            <summary>
+            Get or set the reviewing user
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Review.UserRating">
+            <summary>
+            Get or set the rating of the movie by the reviewing user
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Review.ReviewSummary">
+            <summary>
+            Get or set the summery of review
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Review.ReviewText">
+            <summary>
+            Get or set the review
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Review.DateWritten">
+            <summary>
+            Get or set the date when the review is written
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Review.DateWrittenUnix">
+            <summary>
+            Get or set the date when the review is unix format
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.SuggestionMovie">
+            <summary>
+            Represent a movie suggestion
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.SuggestionMovie.State">
+            <summary>
+            Get or set the state of movie
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.Torrent">
+            <summary>
+            Represent a torrent file in YTS
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.Torrent.ToString">
+            <summary>
+            Get a string representation of this object
+            </summary>
+            <returns>Object in string</returns>
+        </member>
+        <member name="P:YifyLib.Data.Torrent.Url">
+            <summary>
+            Get or set the URL for torrent file
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Torrent.Hash">
+            <summary>
+            Get or set the torrent hash code
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Torrent.Quality">
+            <summary>
+            Get or set the movie quality 
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Torrent.Seeds">
+            <summary>
+            Get or set the current number of seeds
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Torrent.Peers">
+            <summary>
+            Get or set the current number of peers
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Torrent.Size">
+            <summary>
+            Get or set the size of torrent in string format
+            Ex: 750 MB
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Torrent.SizeBytes">
+            <summary>
+            Get or set the size of torrent in bytes
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Torrent.DateUploaded">
+            <summary>
+            Get or set the date uploaded
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Torrent.DateUploadedUnix">
+            <summary>
+            Get or set the date uploaded in unix format
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.UpcomingMovie">
+            <summary>
+            Represent a upcoming movie in YTS
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.UpcomingMovie.Title">
+            <summary>
+            Get or set the title of the movie
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.UpcomingMovie.Year">
+            <summary>
+            Get or set the movie year
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.UpcomingMovie.IMDBCode">
+            <summary>
+            Get or set the IMDB code
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.UpcomingMovie.MediumCover">
+            <summary>
+            Get or set the medium cover image
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.UpcomingMovie.DateAdded">
+            <summary>
+            Get or set the date added
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.UpcomingMovie.DateAddedUnix">
+            <summary>
+            Get or set the date added in unix format
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.User">
+            <summary>
+            Represent a user in YTS
+            </summary>
+        </member>
+        <member name="M:YifyLib.Data.User.#ctor">
+            <summary>
+            Instantiate this default user object
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.User.Downloads">
+            <summary>
+            Get or set a list of downloaded movies.
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.User.AboutText">
+            <summary>
+            Get or set the about text of the user
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.User.DateJoined">
+            <summary>
+            Get or set the data joined
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.User.DateJoinedUnix">
+            <summary>
+            Get or set the data joined in unix format
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.User.DateLastSeen">
+            <summary>
+            Get or set the data last seen
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.User.DateLastSeenUnix">
+            <summary>
+            Get or set the data last seen unix format
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.UserDownloadedMovie">
+            <summary>
+            Represent a downloaded movie 
+            </summary>
+        </member>
+        <member name="T:YifyLib.Data.UserImage">
+            <summary>
+            Represent a user image
+            </summary>
+        </member>
+        <member name="T:YifyLib.Api.Util.UriBuilderWithQuerySupport">
+            <summary>
+            Uri builder with easy query string modification support.
+            </summary>
+        </member>
+        <member name="M:YifyLib.Api.Util.UriBuilderWithQuerySupport.AddQueryParameter(System.String,System.String,System.Boolean)">
+            <summary>
+            Add query parameter
+            </summary>
+            <param name="name">Field Name</param>
+            <param name="value">Value</param>
+            <param name="ignoreIfEmpty">If set to true then value is added only if it is not null or an empty string.</param>
+        </member>
+        <member name="M:YifyLib.Api.Util.UriBuilderWithQuerySupport.RemoveQueryParameter">
+            <summary>
+            Remove all the query parameters
+            </summary>
+        </member>
+        <member name="M:YifyLib.Api.Util.UriBuilderWithQuerySupport.RemoveQueryParameter(System.String)">
+            <summary>
+            Remove a query parameter
+            </summary>
+            <param name="name">Field name of the parameter to remove</param>
+        </member>
+        <member name="P:YifyLib.Api.Util.UriBuilderWithQuerySupport.Query">
+            <summary>
+            Get the query string
+            </summary>
+        </member>
+        <member name="T:YifyLib.SortOrder">
+            <summary>
+            Sort order for sorting a list. 
+            </summary>
+        </member>
+        <member name="F:YifyLib.SortOrder.Desc">
+            <summary>
+            Descending Order
+            </summary>
+        </member>
+        <member name="F:YifyLib.SortOrder.Asc">
+            <summary>
+            Ascending Order
+            </summary>
+        </member>
+        <member name="T:YifyLib.YifyExtensions">
+            <summary>
+            Useful extension methods for YifyLib
+            </summary>
+        </member>
+        <member name="M:YifyLib.YifyExtensions.ToMagnetUri(YifyLib.Data.Torrent)">
+            <summary>
+            Convert YifyLib.Data.Torrent to Magnet URI
+            </summary>
+            <param name="t">YifyLib.Data.Torrent object to convert</param>
+            <returns>Bit Torrent based Magnet URI in string</returns>
+        </member>
+        <member name="M:YifyLib.YifyExtensions.ToMagnetUri(YifyLib.Data.Torrent,System.String)">
+            <summary>
+            Convert YifyLib.Data.Torrent to Magnet URI with a given display name
+            </summary>
+            <param name="t">YifyLib.Data.Torrent object to convert</param>
+            <param name="dn">Display name to use on the torrent client</param>
+            <returns>Bit Torrent based Magnet URI in string</returns>
+        </member>
+        <member name="M:YifyLib.YifyExtensions.ToMagnetUri(YifyLib.Data.Torrent,System.String,System.Uri[])">
+            <summary>
+            Convert YifyLib.Data.Torrent to Magnet URI with given display name and a set of trackers.
+            </summary>
+            <param name="t">YifyLib.Data.Torrent object to convert</param>
+            <param name="trackers">List of tracker Uri(s)</param>
+            <param name="dn">Display name to use on the torrent client</param>
+            <returns>Bit Torrent based Magnet URI in string</returns>
+        </member>
+        <member name="M:YifyLib.YifyExtensions.ToMagnetUri(YifyLib.Data.Torrent,System.Uri[])">
+            <summary>
+            Convert YifyLib.Data.Torrent to Magnet URI with given set of trackers
+            </summary>
+            <param name="t">YifyLib.Data.Torrent object to convert</param>
+            <param name="trackers">List of tracker Uri(s)</param>
+            <returns>Bit Torrent based Magnet URI in string</returns>
+        </member>
+        <member name="T:YifyLib.YifyMissingAppKeyException">
+            <summary>
+            Exception for Application Key required error
+            </summary>
+        </member>
+        <member name="M:YifyLib.YifyMissingAppKeyException.#ctor">
+            <summary>
+            Instantiate a default MissingAppKeyException
+            </summary>
+        </member>
+        <member name="M:YifyLib.YifyMissingAppKeyException.#ctor(System.String)">
+            <summary>
+            Instantiate a MissingAppKeyException with a given message
+            </summary>
+            <param name="message">Exception message</param>
+        </member>
+        <member name="M:YifyLib.YifyMissingAppKeyException.#ctor(System.String,System.Exception)">
+            <summary>
+            Instantiate a MissingAppKeyException with a given message and its causing exception.
+            </summary>
+            <param name="message">Exception message</param>
+            <param name="inner">Parent Exception</param>
+        </member>
+        <member name="T:YifyLib.YifyException">
+            <summary>
+            Exception in YiFy API operations
+            </summary>
+        </member>
+        <member name="M:YifyLib.YifyException.#ctor">
+            <summary>
+            Initializes a new instance of the YiFyException class.
+            
+            </summary>
+        </member>
+        <member name="M:YifyLib.YifyException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the YiFyException class with a specified error message.
+            
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:YifyLib.YifyException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the YiFyException class with a specified error message and YiFy site response error message.
+            
+            </summary>
+            <param name="message">The message that describes the error.</param><param name="yifyMessage">YiFy site response error message</param>
+        </member>
+        <member name="M:YifyLib.YifyException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the YiFyException class with a
+                        specified error message and a reference to the inner exception that is the cause of this exception.
+            
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param><param name="innerException">The exception that
+                        is the cause of the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="P:YifyLib.YifyException.YiFyMessage">
+            <summary>
+            Error message from YiFy torrent site
+            </summary>
+        </member>
+        <member name="T:YifyLib.SearchResultSort">
+            <summary>
+            Field to sort the search result.
+            </summary>
+        </member>
+        <member name="F:YifyLib.SearchResultSort.Title">
+            <summary>
+            Sort By Title
+            </summary>
+        </member>
+        <member name="F:YifyLib.SearchResultSort.Year">
+            <summary>
+            Sort by Year
+            </summary>
+        </member>
+        <member name="F:YifyLib.SearchResultSort.Rating">
+            <summary>
+            Sort by Rating
+            </summary>
+        </member>
+        <member name="F:YifyLib.SearchResultSort.Peers">
+            <summary>
+            Sort by Peers
+            </summary>
+        </member>
+        <member name="F:YifyLib.SearchResultSort.Seeds">
+            <summary>
+            Sort by Seeders
+            </summary>
+        </member>
+        <member name="F:YifyLib.SearchResultSort.DownloadedCount">
+            <summary>
+            Sort by Download Count
+            </summary>
+        </member>
+        <member name="F:YifyLib.SearchResultSort.LikeCount">
+            <summary>
+            Sort by Like Count
+            </summary>
+        </member>
+        <member name="F:YifyLib.SearchResultSort.DateAdded">
+            <summary>
+            Sort by Date Added
+            </summary>
+        </member>
+        <member name="T:YifyLib.SearchResultSortExtentions">
+            <summary>
+            Extensions for SearchResultSort enum.
+            </summary>
+        </member>
+        <member name="M:YifyLib.SearchResultSortExtentions.ToQueryParameterName(YifyLib.SearchResultSort)">
+            <summary>
+            Convert SearchResultSort value to its URL parameter name
+            </summary>
+            <param name="sort">Value to convert</param>
+            <returns>Converted name in <code>System.String</code></returns>
+        </member>
+        <member name="T:YifyLib.Yify">
+            <summary>
+            Provides access to YTS API v2
+            </summary>
+        </member>
+        <member name="M:YifyLib.Yify.#ctor">
+            <summary>
+            Instantiate a new Yify class object
+            </summary>
+        </member>
+        <member name="M:YifyLib.Yify.#ctor(System.Uri)">
+            <summary>
+            Instantiate a new Yify class object with given YTS API base URI
+            </summary>
+            <param name="baseUri">Base URI for YTS API, 
+            Base URI should be an absolute URI which conforms with Base URI + Relative Path criteria. 
+            Ex: 
+            <code>https://yts.to/v2/ + list_movies.xml</code>
+            </param>
+        </member>
+        <member name="M:YifyLib.Yify.#ctor(System.String)">
+            <summary>
+            Instantiate a new Yify class object with given YTS API application key
+            </summary>
+            <param name="applicationKey">YTS API Application Key</param>
+            <exception cref="T:System.ArgumentException">If applicationKey parameter is empty or null</exception>
+        </member>
+        <member name="M:YifyLib.Yify.#ctor(System.String,System.Uri)">
+            <summary>
+            Instantiate a new Yify class object with given YTS API application key and its base baseUri
+            </summary>
+            <param name="applicationKey">YTS API Application Key</param>
+            <param name="baseUri">Base URI for YTS API, 
+            Base URI should be an absolute URI which conforms with Base URI + Relative Path criteria. 
+            Ex: 
+            <code>https://yts.to/v2/ + list_movies.xml</code>
+            </param>
+        </member>
+        <member name="M:YifyLib.Yify.ListMovies(System.String,System.String,System.String,System.UInt32,System.UInt32,System.UInt32,YifyLib.SearchResultSort,YifyLib.SortOrder)">
+            <summary>
+            Search or list movies in YTS
+            </summary>
+            <param name="queryTerm">Term to search</param>
+            <param name="quality">Quality of the release Ex: 720p, 1080p, 3D</param>
+            <param name="genre">Genre of the movie (See http://www.imdb.com/genre/ for full list)</param>
+            <param name="minimumRating">Minimum rating of the movie. Ex: 0 to 9</param>
+            <param name="limit">The limit of results per page. Ex: 20</param>
+            <param name="page">Page number to view the movies Ex: Limit 15 and Page 2 will show you movies 15 to 30</param>
+            <param name="sortBy">Sorts the results by chosen field</param>
+            <param name="orderBy">Order of the results in Ascending or Descending order</param>
+            <returns>Collection of ListMovie class objects</returns>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.GetMovie(System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Get movie details for a particular movie
+            </summary>
+            <param name="movieID">YTS movie id</param>
+            <param name="includeCast">If true cast information will be included</param>
+            <param name="includeImages">If true movie images will be included</param>
+            <returns>Movie object containing the movie result</returns>
+        </member>
+        <member name="M:YifyLib.Yify.GetMovieSuggestion(System.Int32)">
+            <summary>
+            Get suggestion fro particular movie
+            </summary>
+            <param name="movieID">YTS movie id</param>
+            <returns>Collection of SuggestionMovie class objects</returns>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.GetMovieComments(System.Int32)">
+            <summary>
+            Get comments made by YTS users for a particular movie
+            </summary>
+            <param name="movieID">YTS movie id</param>
+            <returns>Collection of Comment class objects</returns>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.GetMovieReviews(System.Int32)">
+            <summary>
+            Get movie reviews made for a particular movie
+            </summary>
+            <param name="movieID">YTS movie id</param>
+            <returns>Collection of Review class objects</returns>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.GetMovieParentalGuide(System.Int32)">
+            <summary>
+            Get parental guides for a movie
+            </summary>
+            <param name="movieID">YTS movie id</param>
+            <returns>Collection of ParentalGuide class objects</returns>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.GetUserDetails(System.Int32)">
+            <summary>
+            Get user details
+            </summary>
+            <param name="userID">YTS user id</param>
+            <returns>User class object containing user details.</returns>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.Login(System.String,System.String)">
+            <summary>
+            Login to the Yify torrent.
+            </summary>
+            <param name="username">Yify torrent username</param>
+            <param name="password">Yify torrent password</param>
+            <returns>String containing the userKey</returns>
+            <exception cref="T:YifyLib.YifyMissingAppKeyException">If application key is missing</exception>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.GetProfile">
+            <summary>
+            Get the logged in user's Yify profile
+            </summary>
+            <returns>User's profile</returns>
+            <exception cref="T:YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.EditUserSettings(System.String,System.String,System.String)">
+            <summary>
+            Edit user's profile
+            </summary>
+            <param name="aboutText">About text for profile</param>
+            <param name="newPassword">New Password</param>
+            <param name="avatarImagePath">Path to avatar image file</param>
+            <returns>Updated profile of the current user</returns>
+            <exception cref="T:YifyLib.YifyMissingAppKeyException">If application key is missing</exception>
+            <exception cref="T:YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
+            <exception cref="T:System.IO.FileNotFoundException">If the avatar image could not be found in the specified location</exception>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.RegisterUser(System.String,System.String,System.String)">
+            <summary>
+            Register a new user on Yify torrent
+            </summary>
+            <param name="userName">Username</param>
+            <param name="password">Password</param>
+            <param name="email">Email Address</param>
+            <returns>Registered user information</returns>
+            <exception cref="T:YifyLib.YifyMissingAppKeyException">If application key is missing</exception>
+            <exception cref="T:System.ArgumentException">If Username, Password or Email is empty or null</exception>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.ForgotUserPassword(System.String)">
+            <summary>
+            Send a password recovery request to Yify torrent. If the email is valid Yify torrent will email a 
+            password rest code which can be used on <code>ResetUserPassword</code> function.
+            </summary>
+            <param name="email">Email of a registered account</param>
+            <returns>True if the request is successful</returns>
+            <exception cref="T:YifyLib.YifyMissingAppKeyException">If application key is missing</exception>
+            <exception cref="T:System.ArgumentException">If Email is empty or null</exception>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.ResetUserPassword(System.String,System.String)">
+            <summary>
+            Reset the user password
+            </summary>
+            <param name="resetCode">Reset code received through email</param>
+            <param name="newPassword">New password</param>
+            <returns>True if change is successful</returns>
+             <exception cref="T:YifyLib.YifyMissingAppKeyException">If application key is missing</exception>
+             <exception cref="T:System.ArgumentException">If Reset Code or New Password is empty or null</exception>
+             <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.LikeMovie(System.Int32)">
+            <summary>
+            Like movie
+            </summary>
+            <param name="movieID">Movie ID</param>
+            <returns>True if successful</returns>
+             <exception cref="T:YifyLib.YifyMissingAppKeyException">If application key is missing</exception>
+             <exception cref="T:YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
+             <exception cref="T:System.ArgumentException">If movie id is invalid</exception>
+             <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.BookmarkedMovies(System.Boolean)">
+            <summary>
+            Get a list of bookmarked movie for currently logged in user.
+            </summary>
+            <param name="withRtRatings">If true results will include Rotten tomato ratings</param>
+            <returns>Collection of Bookmarked Movie</returns>
+            <exception cref="T:YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.AddMovieBookmark(System.Int32)">
+            <summary>
+            Bookmark a movie
+            </summary>
+            <param name="movieID">Movie ID to be bookmarked</param>
+            <returns>True if bookmark was successful</returns>
+            <exception cref="T:YifyLib.YifyMissingAppKeyException">If application key is missing</exception>
+            <exception cref="T:YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
+            <exception cref="T:System.ArgumentException">If movie id is invalid</exception>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.DeleteMovieBookmark(System.Int32)">
+            <summary>
+            Delete a bookmark
+            </summary>
+            <param name="movieID">Movie ID to be removed from bookmarks</param>
+            <returns>True if bookmark was successful</returns>
+            <exception cref="T:YifyLib.YifyMissingAppKeyException">If application key is missing</exception>
+            <exception cref="T:YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
+            <exception cref="T:System.ArgumentException">If movie id is invalid</exception>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.MakeComment(System.Int32,System.String)">
+            <summary>
+            Comment on a movie
+            </summary>
+            <param name="movieID">Movie ID to comment on</param>
+            <param name="commentText">Comment Text</param>
+            <returns>ID of the newly created comment</returns>
+            <exception cref="T:YifyLib.YifyMissingAppKeyException">If application key is missing</exception>
+            <exception cref="T:YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
+            <exception cref="T:System.ArgumentException">If movie id or comment text is null or empty</exception>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.LikeComment(System.Int32)">
+            <summary>
+            Like a comment
+            </summary>
+            <param name="commentID">Comment ID to like</param>
+            <returns>True if comment was liked</returns>
+            <exception cref="T:YifyLib.YifyMissingAppKeyException">If application key is missing</exception>
+            <exception cref="T:YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
+            <exception cref="T:System.ArgumentException">If comment id is invalid</exception>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.ReportComment(System.Int32)">
+            <summary>
+            Report a comment which is not in conformance with YTS policy.
+            </summary>
+            <param name="commentID">Comment ID to like</param>
+            <returns>True if comment was reported</returns>
+            <exception cref="T:YifyLib.YifyMissingAppKeyException">If application key is missing</exception>
+            <exception cref="T:YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
+            <exception cref="T:System.ArgumentException">If comment id is invalid</exception>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.DeleteComment(System.Int32)">
+            <summary>
+            Delete a comment.
+            </summary>
+            <param name="commentID">Comment ID to like</param>
+            <returns>True if comment was deleted</returns>
+            <exception cref="T:YifyLib.YifyMissingAppKeyException">If application key is missing</exception>
+            <exception cref="T:YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
+            <exception cref="T:System.ArgumentException">If comment id is invalid</exception>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="M:YifyLib.Yify.MakeRequest(System.String,System.String)">
+            <summary>
+            Make a request for a movie on YTS
+            </summary>
+            <param name="movieTitle">Title of the Movie</param>
+            <param name="requestMessage">Message from user which can include a short description, IMDb links, 
+            and 1080p/720p sources which YTS can encode from</param>
+            <returns>True if request was made.</returns>
+            <exception cref="T:YifyLib.YifyMissingAppKeyException">If application key is missing</exception>
+            <exception cref="T:YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
+            <exception cref="T:System.ArgumentException">If movie id or request message is null or empty</exception>
+            <exception cref="T:YifyLib.YifyException">If any errors occurred YTS process</exception>
+        </member>
+        <member name="P:YifyLib.Yify.ApplicationKey">
+            <summary>
+            Get or Set the Application key provided by YTS torrent.
+            </summary>
+        </member>
+        <member name="P:YifyLib.Yify.CurrentUserKey">
+            <summary>
+            Get or set the currently logged in user's user key
+            </summary>
+        </member>
+        <member name="P:YifyLib.Yify.IsLoggedIn">
+            <summary>
+            Get whether a user is currently logged in.
+            </summary>
+        </member>
+        <member name="T:YifyLib.YifyNotLoggedInException">
+            <summary>
+            Exception for login required error.
+            </summary>
+        </member>
+        <member name="M:YifyLib.YifyNotLoggedInException.#ctor">
+            <summary>
+            Initializes a new instance of the YifyNotLoggedInException class.
+            </summary>
+        </member>
+        <member name="M:YifyLib.YifyNotLoggedInException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the YifyNotLoggedInException class with a specified error message.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:YifyLib.YifyNotLoggedInException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the YifyNotLoggedInException class with a
+                        specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param><param name="innerException">The exception that
+                        is the cause of the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+    </members>
+</doc>

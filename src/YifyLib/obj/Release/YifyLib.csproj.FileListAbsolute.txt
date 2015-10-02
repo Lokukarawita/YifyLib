@@ -1,0 +1,6 @@
+D:\Google Drive\Work_Files\YifyLib\YifyLib\bin\Release\YifyLib.XML
+D:\Google Drive\Work_Files\YifyLib\YifyLib\bin\Release\YifyLib.dll
+D:\Google Drive\Work_Files\YifyLib\YifyLib\bin\Release\YifyLib.pdb
+D:\Google Drive\Work_Files\YifyLib\YifyLib\obj\Release\YifyLib.dll
+D:\Google Drive\Work_Files\YifyLib\YifyLib\obj\Release\YifyLib.pdb
+D:\Google Drive\Work_Files\YifyLib\YifyLib\obj\Release\YifyLib.csprojResolveAssemblyReference.cache

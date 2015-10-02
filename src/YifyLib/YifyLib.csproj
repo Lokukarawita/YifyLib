@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\Google Drive\Work_Files\YifyLib\YifyLib.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{20ABCBD2-BCD7-4019-8458-FE756A3A5487}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>YifyLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>YifyLib</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\YifyLib.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\YifyLib.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\RequestUriHelper.cs" />
+    <Compile Include="Api\ResponseParser.cs" />
+    <Compile Include="Api\YifyAPI.cs" />
+    <Compile Include="Api\YifyChecks.cs" />
+    <Compile Include="Data\Actor.cs" />
+    <Compile Include="Data\Base\AbstractImage.cs" />
+    <Compile Include="Data\Base\AbstractMovie.cs" />
+    <Compile Include="Data\Base\AbstractPerson.cs" />
+    <Compile Include="Data\Base\AbstractUser.cs" />
+    <Compile Include="Data\Base\AbstractYifyMovie.cs" />
+    <Compile Include="Data\Base\AbstractYifyUser.cs" />
+    <Compile Include="Data\BookmarkedMovie.cs" />
+    <Compile Include="Data\Comment.cs" />
+    <Compile Include="Data\CommentUser.cs" />
+    <Compile Include="Data\Enums.cs" />
+    <Compile Include="Data\ListMovie.cs" />
+    <Compile Include="Data\Movie.cs" />
+    <Compile Include="Data\MovieImage.cs" />
+    <Compile Include="Data\ParentalGuide.cs" />
+    <Compile Include="Data\Person.cs" />
+    <Compile Include="Data\Profile.cs" />
+    <Compile Include="Data\RegisterUser.cs" />
+    <Compile Include="Data\Review.cs" />
+    <Compile Include="Data\ReviewUser.cs" />
+    <Compile Include="Data\SuggestionMovie.cs" />
+    <Compile Include="Data\Torrent.cs" />
+    <Compile Include="Data\UpcomingMovie.cs" />
+    <Compile Include="Data\User.cs" />
+    <Compile Include="Data\UserDownloadedMovie.cs" />
+    <Compile Include="Data\UserImage.cs" />
+    <Compile Include="Api\Extentions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Api\Util\UriBuilderWithQuerySupport.cs" />
+    <Compile Include="SortOrder.cs" />
+    <Compile Include="YifyExtensions.cs" />
+    <Compile Include="YifyMissingAppKeyException.cs" />
+    <Compile Include="YifyException.cs" />
+    <Compile Include="SearchResultSort.cs" />
+    <Compile Include="Yify.cs" />
+    <Compile Include="YifyNotLoggedInException.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

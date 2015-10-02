@@ -1,0 +1,665 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YifySharp</name>
+    </assembly>
+    <members>
+        <member name="M:YifySharp.YifyClient.GetMovieList(System.String,System.Int32,System.Int32,YifySharp.Models.MovieQuality,System.Int32,System.String,YifySharp.Models.MovieSortOption,YifySharp.Models.MovieOrderOption)">
+            <summary>
+            Returns a list of movies that match the given filters. If queryTerm is not set, a list of the latest torrents is returned.
+            </summary>
+            <param name="queryTerm">term used to search movies by title/actors/directors (or their corresponding IMDb code)</param>
+            <param name="limit">number of results per page</param>
+        </member>
+        <member name="M:YifySharp.YifyClient.GetMovieDetails(System.UInt32,System.Boolean,System.Boolean)">
+            <summary>
+            Returns information about the specified movie
+            </summary>
+            <param name="movieId">the movie's id to look up</param>
+            <param name="withImages">if true, movie-related artwork will be included</param>
+            <param name="withCast">if true, actor/director information will be included</param>
+        </member>
+        <member name="M:YifySharp.YifyClient.GetMovieDetails(YifySharp.Models.MovieInfoBase,System.Boolean,System.Boolean)">
+            <summary>
+            Returns information about the specified movie
+            </summary>
+            <param name="movie">the movie to look up</param>
+            <param name="withImages">if true, movie-related artwork will be included</param>
+            <param name="withCast">if true, actor/director information will be included</param>
+        </member>
+        <member name="M:YifySharp.YifyClient.GetMovieSuggestions(System.UInt32)">
+            <summary>
+            Returns a list of 4 movies related to the specified movie
+            </summary>
+        </member>
+        <member name="M:YifySharp.YifyClient.GetMovieSuggestions(YifySharp.Models.MovieInfoBase)">
+            <summary>
+            Returns a list of 4 movies related to the specified movie
+            </summary>
+        </member>
+        <member name="M:YifySharp.YifyClient.GetMovieComments(System.UInt32)">
+            <summary>
+            Returns all the comments for the specified movie
+            </summary>
+        </member>
+        <member name="M:YifySharp.YifyClient.GetMovieComments(YifySharp.Models.MovieInfoBase)">
+            <summary>
+            Returns all the comments for the specified movie
+            </summary>
+        </member>
+        <member name="M:YifySharp.YifyClient.GetReviews(System.UInt32)">
+            <summary>
+            Returns all the IMDb movie reviews for the specified movie
+            </summary>
+        </member>
+        <member name="M:YifySharp.YifyClient.GetReviews(YifySharp.Models.MovieInfoBase)">
+            <summary>
+            Returns all the IMDb movie reviews for the specified movie
+            </summary>
+        </member>
+        <member name="M:YifySharp.YifyClient.GetParentalGuides(System.UInt32)">
+            <summary>
+            Returns all the parental guide ratings for the specified movie
+            </summary>
+        </member>
+        <member name="M:YifySharp.YifyClient.GetParentalGuides(YifySharp.Models.MovieInfoBase)">
+            <summary>
+            Returns all the parental guide ratings for the specified movie
+            </summary>
+        </member>
+        <member name="M:YifySharp.YifyClient.GetUpcomingList">
+            <summary>
+            Returns a list of movies that will soon be uploaded to yts.re
+            </summary>
+        </member>
+        <member name="M:YifySharp.YifyClient.GetUserDetails(System.UInt32)">
+            <summary>
+            Returns profile information for the specified user
+            </summary>
+            <param name="userId">The ID of the user to look up</param>
+        </member>
+        <member name="M:YifySharp.YifyClient.Execute``1(RestSharp.RestRequest,System.String)">
+            <summary>
+            Executes the request and returns the deserialized response data
+            </summary>
+            <typeparam name="T">the type used to deserialize the returned data</typeparam>
+            <param name="request">the request to execute</param>
+            <param name="requestEndpoint">the endpoint used to construct the base url for this request</param>
+        </member>
+        <member name="P:YifySharp.Models.ImageInfo.BackgroundImage">
+            <summary>
+            A background image for the movie
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.ImageInfo.SmallCoverImage">
+            <summary>
+            The movie's cover image in small size
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.ImageInfo.MediumCoverImage">
+            <summary>
+            The movie's cover image in medium size
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.ImageInfo.LargeCoverImage">
+            <summary>
+            The movie's cover image in large size
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.ImageInfo.MediumScreenshotImage1">
+            <summary>
+            A screenshot of the movie in medium size
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.ImageInfo.MediumScreenshotImage2">
+            <summary>
+            A second screenshot of the movie in medium size
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.ImageInfo.MediumScreenshotImage3">
+            <summary>
+            A third screenshot of the movie in medium size
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.ImageInfo.LargeScreenshotImage1">
+            <summary>
+            A screenshot of the movie in large size
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.ImageInfo.LargeScreenshotImage2">
+            <summary>
+            A second screenshot of the movie in large size
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.ImageInfo.LargeScreenshotImage3">
+            <summary>
+            A third screenshot of the movie in large size
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.CommentInfo.CommentId">
+            <summary>
+            The comment's id
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.CommentInfo.UserId">
+            <summary>
+            The commenter's user id
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.CommentInfo.Username">
+            <summary>
+            The commenter's username
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.CommentInfo.UserProfileUrl">
+            <summary>
+            Link to the commenter's profile
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.CommentInfo.SmallUserAvatarImage">
+            <summary>
+            Link to the commenter's avatar in small size
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.CommentInfo.MediumUserAvatarImage">
+            <summary>
+            Link to the commenter's avatar in medium size
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.CommentInfo.UserGroup">
+            <summary>
+            The commenter's group name
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.CommentInfo.LikeCount">
+            <summary>
+            Number of likes for this particular comment
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.CommentInfo.CommentText">
+            <summary>
+            The body of the comment
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.CommentInfo.DateAdded">
+            <summary>
+            The date this comment was submitted
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.CommentInfo.DateAddedUnix">
+            <summary>
+            The date this comment was submitted, in epoch format
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieInfoBase.Id">
+            <summary>
+            Movie identifier number
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieInfoBase.Url">
+            <summary>
+            Link to the movie page on yts.re
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieInfoBase.ImdbCode">
+            <summary>
+            Code of movie's imdb page
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieInfoBase.Title">
+            <summary>
+            Movie title, without release year
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieInfoBase.TitleLong">
+            <summary>
+            Movie title, including release year
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieInfoBase.Year">
+            <summary>
+            Movie's release year
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieInfoBase.Rating">
+            <summary>
+            Movie's rating on imdb
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieInfoBase.Runtime">
+            <summary>
+            Movie's runtime in minutes
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieInfoBase.Genres">
+            <summary>
+            List of movie genres
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieInfoBase.Language">
+            <summary>
+            Main language of the movie
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieInfoBase.MpaRating">
+            <summary>
+            The MPAA rating of the movie (PG-13, R etc)
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieInfoBase.DateUploaded">
+            <summary>
+            Date uploaded to YIFY
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieInfoBase.DateUploadedUnix">
+            <summary>
+            Date uploaded to YIFY (in epoch format)
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieInfoBase.ImdbPage">
+            <summary>
+            Get link to the movie's imdb page
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieInfoBase.Torrents">
+            <summary>
+            Returns a list of torrents for this movie, each in different quality
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieDetails.DownloadCount">
+            <summary>
+            Movie download count
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieDetails.LikeCount">
+            <summary>
+            Movie like count
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieDetails.RtCriticsScore">
+            <summary>
+            Movie's critics score on RottenTomatoes
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieDetails.RtCriticsRating">
+            <summary>
+            Movie's critics rating on RottenTomatoes
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieDetails.RtAudienceScore">
+            <summary>
+            Movie's audience score on RottenTomatoes
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieDetails.RtAudienceRating">
+            <summary>
+            Movie's audience rating on RottenTomatoes
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieDetails.DescriptionIntro">
+            <summary>
+            Short movie description
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieDetails.DescriptionFull">
+            <summary>
+            Full movie description
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieDetails.YtTrailerCode">
+            <summary>
+            YouTube Code to movie's trailer
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieDetails.Images">
+            <summary>
+            Movie-related artwork
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieDetails.Directors">
+            <summary>
+            List of movie's directors
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieDetails.Actors">
+            <summary>
+            List of movie cast
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieDetails.YoutubeTrailerLink">
+            <summary>
+            Get link to the movie's trailer on YouTube
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieDirector.Name">
+            <summary>
+            Director's full name
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieDirector.SmallImage">
+            <summary>
+            Link to small-sized image of director
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieDirector.MediumImage">
+            <summary>
+            Link to medium-sized image of director
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieActor.Name">
+            <summary>
+            Actor's full name
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieActor.CharacterName">
+            <summary>
+            The name of the character played by the actor
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieActor.SmallImage">
+            <summary>
+            Link to small-sized image of actor
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieActor.MediumImage">
+            <summary>
+            Link to medium-sized image of actor
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieInfo.SmallCoverImage">
+            <summary>
+            Url to a small cover image of the movie
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieInfo.MediumCoverImage">
+            <summary>
+            Url to a medium-sized cover image of the movie
+            </summary>
+        </member>
+        <member name="F:YifySharp.Models.MovieOrderOption.Descending">
+            <summary>
+            Descending order
+            </summary>
+        </member>
+        <member name="F:YifySharp.Models.MovieOrderOption.Ascending">
+            <summary>
+            Ascending order
+            </summary>
+        </member>
+        <member name="F:YifySharp.Models.MovieQuality.All">
+            <summary>
+            Any quality
+            </summary>
+        </member>
+        <member name="F:YifySharp.Models.MovieQuality.HD720p">
+            <summary>
+            High-Definition 720p
+            </summary>
+        </member>
+        <member name="F:YifySharp.Models.MovieQuality.FullHD1080p">
+            <summary>
+            Full High-Definition 1080p
+            </summary>
+        </member>
+        <member name="F:YifySharp.Models.MovieQuality.S3D">
+            <summary>
+            3D
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieReview.Username">
+            <summary>
+            Username of reviewer
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieReview.UserRating">
+            <summary>
+            User's rating of the movie
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieReview.UserLocation">
+            <summary>
+            Reviewer's location
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieReview.ReviewSummary">
+            <summary>
+            A summary of the user's review
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieReview.ReviewText">
+            <summary>
+            User's review text
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieReview.DateWritten">
+            <summary>
+            The date this review was submitted
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.MovieReview.DateWrittenUnix">
+            <summary>
+            The date this review was submitted, in epoch format
+            </summary>
+        </member>
+        <member name="F:YifySharp.Models.MovieSortOption.Title">
+            <summary>
+            Sort by movie title
+            </summary>
+        </member>
+        <member name="F:YifySharp.Models.MovieSortOption.Year">
+            <summary>
+            Sort by release year
+            </summary>
+        </member>
+        <member name="F:YifySharp.Models.MovieSortOption.Rating">
+            <summary>
+            Sort by movie rating
+            </summary>
+        </member>
+        <member name="F:YifySharp.Models.MovieSortOption.Peers">
+            <summary>
+            Sort by torrent peers
+            </summary>
+        </member>
+        <member name="F:YifySharp.Models.MovieSortOption.Seeds">
+            <summary>
+            Sort by torrent seeds
+            </summary>
+        </member>
+        <member name="F:YifySharp.Models.MovieSortOption.DownloadedCount">
+            <summary>
+            Sort by movie downloads
+            </summary>
+        </member>
+        <member name="F:YifySharp.Models.MovieSortOption.LikeCount">
+            <summary>
+            Sort by movie likes
+            </summary>
+        </member>
+        <member name="F:YifySharp.Models.MovieSortOption.DateAdded">
+            <summary>
+            Sort by date added to YIFY
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.ParentalGuide.Type">
+            <summary>
+            Type of parental guide (violence, nudity etc)
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.ParentalGuide.ParentalGuideText">
+            <summary>
+            Guide description
+            </summary>
+        </member>
+        <member name="F:YifySharp.Models.TorrentInfo.MovieTitle">
+            <summary>
+            movie title, used to construct the magnet url
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.TorrentInfo.Url">
+            <summary>
+            Link to the .torrent file
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.TorrentInfo.Hash">
+            <summary>
+            Torrent's hash
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.TorrentInfo.Quality">
+            <summary>
+            Movie quality, will either be 720p, 1080p or 3D
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.TorrentInfo.Resolution">
+            <summary>
+            The resolution of the movie in format W*H
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.TorrentInfo.FrameRate">
+            <summary>
+            The framerate (FPS) of the movie
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.TorrentInfo.Seeds">
+            <summary>
+            Number of seeders for this torrent
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.TorrentInfo.Peers">
+            <summary>
+            Number of leechers for this torrent
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.TorrentInfo.Size">
+            <summary>
+            Torrent size in string format
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.TorrentInfo.SizeBytes">
+            <summary>
+            Torrent size in bytes
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.TorrentInfo.DownloadCount">
+            <summary>
+            Movie's download count
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.TorrentInfo.DateUploaded">
+            <summary>
+            The date this torrent was uploaded
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.TorrentInfo.DateUploadedUnix">
+            <summary>
+            The date this torrent was uploaded, in epoch format
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.TorrentInfo.MagnetUrl">
+            <summary>
+            Constructs and returns a magnet url for this torrent
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.UpcomingMovieInfo.Title">
+            <summary>
+            Movie title, without release year
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.UpcomingMovieInfo.Year">
+            <summary>
+            Movie's release year
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.UpcomingMovieInfo.ImdbCode">
+            <summary>
+            Code of movie's imdb page
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.UpcomingMovieInfo.MediumCoverImage">
+            <summary>
+            Link to medium-sized cover image of movie
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.UpcomingMovieInfo.DateAdded">
+            <summary>
+            The date the movie was added
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.UpcomingMovieInfo.DateAddedUnix">
+            <summary>
+            The date the movie was added, in epoch format
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.UserDetails.Id">
+            <summary>
+            User identification number
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.UserDetails.Username">
+            <summary>
+            User's username
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.UserDetails.Group">
+            <summary>
+            User's group name
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.UserDetails.Url">
+            <summary>
+            Link to user's page in yts.re
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.UserDetails.AboutText">
+            <summary>
+            User's description text
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.UserDetails.SmallAvatarImage">
+            <summary>
+            Link to small-sized avatar of user
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.UserDetails.MediumAvatarImage">
+            <summary>
+            Link to medium-sized avatar of user
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.UserDetails.DateJoined">
+            <summary>
+            The date the user registered
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.UserDetails.DateJoinedUnix">
+            <summary>
+            The date the user registered, in epoch format
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.UserDetails.DateLastSeen">
+            <summary>
+            The date the user was last seen online
+            </summary>
+        </member>
+        <member name="P:YifySharp.Models.UserDetails.DateLastSeenUnix">
+            <summary>
+            The date the user was last seen online, in epoch format
+            </summary>
+        </member>
+        <member name="P:YifySharp.YifyResponse`1.Status">
+            <summary>
+            The status of the API call, will be either 'ok' or 'error'
+            </summary>
+        </member>
+        <member name="P:YifySharp.YifyResponse`1.StatusMessage">
+            <summary>
+            The status message of the API call
+            </summary>
+        </member>
+        <member name="P:YifySharp.YifyResponse`1.Data">
+            <summary>
+            The results returned from the query
+            </summary>
+        </member>
+    </members>
+</doc>
