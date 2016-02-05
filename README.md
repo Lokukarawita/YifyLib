@@ -1,6 +1,8 @@
 ##NOTE
-_Since deprecation of API v1 by Yts, YifyLib (since v1.1) no longer support the v1 of Yts API.
-See [Coming Soon](/README.md#coming-soon) section for future developments._
+Currently working on porting to YTS.AG API
+
+~~ _Since deprecation of API v1 by Yts, YifyLib (since v1.1) no longer support the v1 of Yts API.
+See [Coming Soon](/README.md#coming-soon) section for future developments._ ~~
 
 # YifyLib
 
@@ -115,4 +117,5 @@ Movie m = y.GetMovie(100);
 ```
 
 # Coming Soon
-* Examples for rest of the functionality.
+* YTS.AG API release (Basic Functionality)
+* Changes to Examples
