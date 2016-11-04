@@ -1,5 +1,6 @@
 ##NOTE
-Currently working on porting to YTS.AG API
+Currently working on porting to YTS.AG API (Update 2016/11/4)
+* Some of the features of YTS.AG api are still under construction (i think). So going with what we have at the moment
 
 ~~_Since deprecation of API v1 by Yts, YifyLib (since v1.1) no longer support the v1 of Yts API.
 See [Coming Soon](/README.md#coming-soon) section for future developments._~~
