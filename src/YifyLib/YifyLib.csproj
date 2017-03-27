@@ -38,6 +38,9 @@
     <DocumentationFile>bin\Release\YifyLib.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net" />
@@ -51,7 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\RequestUriHelper.cs" />
-    <Compile Include="Api\ResponseParser.cs" />
+    <Compile Include="Api\Response\IYifyErrorCheck.cs" />
+    <Compile Include="Api\Response\JSONResponseParser.cs" />
+    <Compile Include="Api\Response\XMLResponseParser.cs" />
+    <Compile Include="Api\Response\ResponseParser.cs" />
     <Compile Include="Api\YifyAPI.cs" />
     <Compile Include="Api\YifyChecks.cs" />
     <Compile Include="Data\Actor.cs" />
@@ -83,6 +89,7 @@
     <Compile Include="Api\Extentions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Api\Util\UriBuilderWithQuerySupport.cs" />
+    <Compile Include="Api\Response\ResponseType.cs" />
     <Compile Include="SortOrder.cs" />
     <Compile Include="YifyExtensions.cs" />
     <Compile Include="YifyMissingAppKeyException.cs" />
@@ -91,6 +98,8 @@
     <Compile Include="Yify.cs" />
     <Compile Include="YifyNotLoggedInException.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

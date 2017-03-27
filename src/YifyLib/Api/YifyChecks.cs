@@ -15,7 +15,7 @@ namespace YifyLib.Api
                 throw new YifyMissingAppKeyException(
                 "Application Key is missing." +
                 " Make sure that you enter correct application key to Yify.ApplicationKey property. " +
-                "If you do not posses an application key then request an application key from https://yts.to/contact");
+                "If you do not posses an application key then request an application key from https://yts.ag/contact");
             }
         }
         public static void CheckLoggedIn(this Yify y)

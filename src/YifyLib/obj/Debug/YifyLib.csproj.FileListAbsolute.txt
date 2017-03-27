@@ -3,3 +3,10 @@ D:\Google Drive\Work_Files\YifyLib\YifyLib\bin\Debug\YifyLib.dll
 D:\Google Drive\Work_Files\YifyLib\YifyLib\bin\Debug\YifyLib.pdb
 D:\Google Drive\Work_Files\YifyLib\YifyLib\obj\Debug\YifyLib.dll
 D:\Google Drive\Work_Files\YifyLib\YifyLib\obj\Debug\YifyLib.pdb
+D:\Google Drive\Work_Files\YifyLib\GitHub\YifyLib\src\YifyLib\bin\Debug\YifyLib.XML
+D:\Google Drive\Work_Files\YifyLib\GitHub\YifyLib\src\YifyLib\bin\Debug\YifyLib.dll
+D:\Google Drive\Work_Files\YifyLib\GitHub\YifyLib\src\YifyLib\bin\Debug\YifyLib.pdb
+D:\Google Drive\Work_Files\YifyLib\GitHub\YifyLib\src\YifyLib\bin\Debug\Newtonsoft.Json.dll
+D:\Google Drive\Work_Files\YifyLib\GitHub\YifyLib\src\YifyLib\bin\Debug\Newtonsoft.Json.xml
+D:\Google Drive\Work_Files\YifyLib\GitHub\YifyLib\src\YifyLib\obj\Debug\YifyLib.dll
+D:\Google Drive\Work_Files\YifyLib\GitHub\YifyLib\src\YifyLib\obj\Debug\YifyLib.pdb

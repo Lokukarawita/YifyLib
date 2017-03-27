@@ -10,31 +10,35 @@ using System.Web;
 using System.Xml;
 using System.Xml.Linq;
 using YifyLib.Api;
+using YifyLib.Api.Response;
 
 namespace YifyLib
 {
     internal static class Extentions
     {
         #region Since version 1.1.7
-        public static Uri ToRequestUri(this RequestUriHelper reqType, string baseUri)
+        public static Uri ToRequestUri(this RequestUriHelper reqType, string baseUri, ResponseType respt)
         {
-            return new Uri(new Uri(baseUri, UriKind.Relative), reqType.RelativePath);
+            return RequestUriHelper.GetUri(new Uri(baseUri, UriKind.Relative), respt, reqType);
         }
-        public static Uri ToRequestUri(this RequestUriHelper reqType, Uri baseUri)
+        public static Uri ToRequestUri(this RequestUriHelper reqType, Uri baseUri, ResponseType respt)
         {
-            return new Uri(baseUri, reqType.RelativePath);
+            return RequestUriHelper.GetUri(baseUri, respt, reqType);
         }
         #endregion
 
-        public static byte[] GetBytes(this Image i) {
+        public static byte[] GetBytes(this Image i)
+        {
             MemoryStream ms = new MemoryStream();
             i.Save(ms, i.RawFormat);
             return ms.ToArray();
         }
-        public static Image ToImage(this string path) {
-            
+        public static Image ToImage(this string path)
+        {
+
             Image i = null;
-            if (File.Exists(path)) {
+            if (File.Exists(path))
+            {
                 try
                 {
                     i = Image.FromFile(path);

@@ -9,9 +9,34 @@
             Represent requests made to YTS API.
             </summary>
         </member>
+        <member name="M:YifyLib.Api.RequestUriHelper.GetUri(System.Uri,YifyLib.Api.Response.ResponseType,YifyLib.Api.RequestUriHelper)">
+            <summary>
+            Create a Uri for a request
+            </summary>
+            <param name="baseUri">Base Uri</param>
+            <param name="respType">Response type</param>
+            <param name="rType">Request type</param>
+            <returns></returns>
+        </member>
         <member name="P:YifyLib.Api.RequestUriHelper.RelativePath">
             <summary>
             Relative URI path
+            </summary>
+        </member>
+        <member name="T:YifyLib.Api.Response.IYifyErrorCheck`1">
+            <summary>
+            Error check interface for YTS response
+            </summary>
+            <typeparam name="T">Type of parsed response</typeparam>
+        </member>
+        <member name="T:YifyLib.Api.Response.ResponseParser">
+            <summary>
+            Response parser base
+            </summary>
+        </member>
+        <member name="T:YifyLib.Api.Response.XMLResponseParser">
+            <summary>
+            XML Response parser
             </summary>
         </member>
         <member name="T:YifyLib.Data.Actor">
@@ -59,6 +84,11 @@
         <member name="P:YifyLib.Data.Actor.CharacterName">
             <summary>
             Get or set the name of the character in the movie
+            </summary>
+        </member>
+        <member name="P:YifyLib.Data.Actor.IMDBCode">
+            <summary>
+            IMDB code for this person
             </summary>
         </member>
         <member name="T:YifyLib.Data.Base.AbstractImage">
@@ -737,6 +767,21 @@
             Get the query string
             </summary>
         </member>
+        <member name="T:YifyLib.Api.Response.ResponseType">
+            <summary>
+            Available response type of YTS API
+            </summary>
+        </member>
+        <member name="F:YifyLib.Api.Response.ResponseType.XML">
+            <summary>
+            XML
+            </summary>
+        </member>
+        <member name="F:YifyLib.Api.Response.ResponseType.JSON">
+            <summary>
+            JSON
+            </summary>
+        </member>
         <member name="T:YifyLib.SortOrder">
             <summary>
             Sort order for sorting a list. 
@@ -1164,7 +1209,7 @@
         </member>
         <member name="M:YifyLib.Yify.MakeRequest(System.String,System.String)">
             <summary>
-            Make a request for a movie on YTS
+            Send a movie add request to YTS
             </summary>
             <param name="movieTitle">Title of the Movie</param>
             <param name="requestMessage">Message from user which can include a short description, IMDb links, 
@@ -1188,6 +1233,21 @@
         <member name="P:YifyLib.Yify.IsLoggedIn">
             <summary>
             Get whether a user is currently logged in.
+            </summary>
+        </member>
+        <member name="P:YifyLib.Yify.CurrentBaseUri">
+            <summary>
+            Get or set the base URI for YTS API
+            </summary>
+        </member>
+        <member name="P:YifyLib.Yify.Parser">
+            <summary>
+            Get or set the response parser which is used to parse YTS API responses
+            </summary>
+        </member>
+        <member name="P:YifyLib.Yify.Proxy">
+            <summary>
+            Proxy to be used
             </summary>
         </member>
         <member name="T:YifyLib.YifyNotLoggedInException">

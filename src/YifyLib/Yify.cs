@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YifyLib.Api;
+using YifyLib.Api.Response;
 using YifyLib.Data;
 
 namespace YifyLib
@@ -15,9 +16,9 @@ namespace YifyLib
     public sealed class Yify
     {
         #region Private Members
-        private YifyAPI _api;
         private string userKey = string.Empty;
         private string appKey = string.Empty;
+        private ResponseParser _parser = new JSONResponseParser();
         #endregion
 
         #region Constructors
@@ -26,10 +27,9 @@ namespace YifyLib
         /// </summary>
         public Yify()
         {
-            _api = new YifyAPI();
+            YifyAPI.RESPONSE_TYPE = _parser.SupportedResponseType;
         }
 
-        #region Since version 1.1.7
         /// <summary>
         /// Instantiate a new Yify class object with given YTS API base URI
         /// </summary>
@@ -39,21 +39,28 @@ namespace YifyLib
         /// <code>https://yts.to/v2/ + list_movies.xml</code>
         /// </param>
         public Yify(Uri baseUri)
+            : this()
         {
-            if (baseUri != null) YifyAPI.Base_URI = baseUri;
+            if (baseUri != null)
+            {
+                YifyAPI.Base_URI = baseUri;
+            }
         }
+
         /// <summary>
         /// Instantiate a new Yify class object with given YTS API application key
         /// </summary>
         /// <param name="applicationKey">YTS API Application Key</param>
         /// <exception cref="ArgumentException">If applicationKey parameter is empty or null</exception>
         public Yify(string applicationKey)
+            : this()
         {
             if (string.IsNullOrWhiteSpace(applicationKey))
                 throw new ArgumentException("Application key parameter cannot be empty");
 
             this.appKey = applicationKey;
         }
+
         /// <summary>
         /// Instantiate a new Yify class object with given YTS API application key and its base baseUri
         /// </summary>
@@ -64,11 +71,11 @@ namespace YifyLib
         /// <code>https://yts.to/v2/ + list_movies.xml</code>
         /// </param>
         public Yify(string applicationKey, Uri baseUri)
+            : this()
         {
             this.appKey = applicationKey;
             if (baseUri != null) YifyAPI.Base_URI = baseUri;
         }
-        #endregion
         #endregion
 
         #region Public Methods
@@ -88,7 +95,7 @@ namespace YifyLib
         public List<ListMovie> ListMovies(
             string queryTerm = "",
             string quality = "All",
-            string genre = "All",
+            string genre = "",
             uint minimumRating = 0,
             uint limit = 20,
             uint page = 1,
@@ -100,7 +107,7 @@ namespace YifyLib
             {
                 var uri = YifyAPI.GetListMovieURI(queryTerm, quality, genre, minimumRating, limit, page, sortBy, orderBy);
                 var res = YifyAPI.SendGetRequest(uri);
-                return ResponseParser.ParseListMovieResponse(res);
+                return _parser.ParseListMovieResponse(res);
             }
             catch (Exception ex)
             {
@@ -122,7 +129,7 @@ namespace YifyLib
             {
                 var uri = YifyAPI.GetMovieURI(movieID, includeCast, includeImages);
                 var res = YifyAPI.SendGetRequest(uri);
-                return ResponseParser.ParseGetMovieResponse(res);
+                return _parser.ParseGetMovieResponse(res);
 
             }
             catch (Exception ex)
@@ -143,7 +150,7 @@ namespace YifyLib
             {
                 var uri = YifyAPI.GetMovieSuggestionsURI(movieID);
                 var res = YifyAPI.SendGetRequest(uri);
-                return ResponseParser.ParseGetMovieSuggestionResponse(res);
+                return _parser.ParseGetMovieSuggestionResponse(res);
             }
             catch (Exception ex)
             {
@@ -157,13 +164,14 @@ namespace YifyLib
         /// <param name="movieID">YTS movie id</param>
         /// <returns>Collection of Comment class objects</returns>
         /// <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", false)]
         public List<Comment> GetMovieComments(int movieID)
         {
             try
             {
                 var uri = YifyAPI.GetMovieCommentsURI(movieID);
                 var res = YifyAPI.SendGetRequest(uri);
-                return ResponseParser.ParseGetMovieCommentsResponse(res);
+                return _parser.ParseGetMovieCommentsResponse(res);
             }
             catch (Exception ex)
             {
@@ -176,13 +184,14 @@ namespace YifyLib
         /// <param name="movieID">YTS movie id</param>
         /// <returns>Collection of Review class objects</returns>
         /// <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", true)]
         public List<Review> GetMovieReviews(int movieID)
         {
             try
             {
                 var uri = YifyAPI.GetMovieReviewURI(movieID);
                 var res = YifyAPI.SendGetRequest(uri);
-                return ResponseParser.ParseGetMovieReviewResponse(res);
+                return _parser.ParseGetMovieReviewResponse(res);
             }
             catch (Exception ex)
             {
@@ -196,13 +205,14 @@ namespace YifyLib
         /// <param name="movieID">YTS movie id</param>
         /// <returns>Collection of ParentalGuide class objects</returns>
         /// <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", true)]
         public List<ParentalGuide> GetMovieParentalGuide(int movieID)
         {
             try
             {
                 var uri = YifyAPI.GetMovieParentalGuideURI(movieID);
                 var res = YifyAPI.SendGetRequest(uri);
-                return ResponseParser.ParseGetMovieParentalGuideResponse(res);
+                return _parser.ParseGetMovieParentalGuideResponse(res);
             }
             catch (Exception ex)
             {
@@ -216,13 +226,14 @@ namespace YifyLib
         /// <param name="userID">YTS user id</param>
         /// <returns>User class object containing user details.</returns>
         /// <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", true)]
         public User GetUserDetails(int userID)
         {
             try
             {
                 var uri = YifyAPI.GetUserDetailsURI(userID, true);
                 var res = YifyAPI.SendGetRequest(uri);
-                return ResponseParser.ParseGetUserDetailsResponse(res);
+                return _parser.ParseGetUserDetailsResponse(res);
             }
             catch (Exception ex)
             {
@@ -230,7 +241,6 @@ namespace YifyLib
                 throw new YifyException("An error occurred. See inner exception for more details", ex);
             }
         }
-
         /// <summary>
         /// Login to the Yify torrent.
         /// </summary>
@@ -239,6 +249,7 @@ namespace YifyLib
         /// <returns>String containing the userKey</returns>
         /// <exception cref="YifyLib.YifyMissingAppKeyException">If application key is missing</exception>
         /// <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", true)]
         public string Login(string username, string password)
         {
             this.CheckAppKey();
@@ -246,7 +257,7 @@ namespace YifyLib
             {
                 var req = YifyAPI.GetUserKeyRequest(username, password, appKey, false);
                 var res = YifyAPI.SendPostRequest(req);
-                string ukey = ResponseParser.ParseGetUserKeyResponse(res);
+                string ukey = _parser.ParseGetUserKeyResponse(res);
                 this.userKey = ukey;
                 return ukey;
             }
@@ -262,12 +273,13 @@ namespace YifyLib
         /// <returns>User's profile</returns>
         /// <exception cref="YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
         /// <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", true)]
         public Profile GetProfile()
         {
             this.CheckLoggedIn();
             var url = YifyAPI.GetUserProfileURI(this.userKey);
             string res = YifyAPI.SendGetRequest(url);
-            return ResponseParser.ParseGetProfileRequest(res);
+            return _parser.ParseGetProfileRequest(res);
         }
         /// <summary>
         /// Edit user's profile
@@ -280,6 +292,7 @@ namespace YifyLib
         /// <exception cref="YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
         /// <exception cref="FileNotFoundException">If the avatar image could not be found in the specified location</exception>
         /// <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", true)]
         public Profile EditUserSettings(string aboutText = "", string newPassword = "", string avatarImagePath = "")
         {
             this.CheckAppKey();
@@ -291,7 +304,7 @@ namespace YifyLib
                 {
                     return YifyAPI.SendPostRequestAsync(req).Result;
                 }).Result;
-                return ResponseParser.ParseGetProfileRequest(res);
+                return _parser.ParseGetProfileRequest(res);
             }
             catch (FileNotFoundException) { throw; }
             catch (Exception ex)
@@ -309,6 +322,7 @@ namespace YifyLib
         /// <exception cref="YifyLib.YifyMissingAppKeyException">If application key is missing</exception>
         /// <exception cref="ArgumentException">If Username, Password or Email is empty or null</exception>
         /// <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", true)]
         public RegisterUser RegisterUser(string userName, string password, string email)
         {
             this.CheckAppKey();
@@ -322,7 +336,7 @@ namespace YifyLib
                 {
                     var req = YifyAPI.GetRegisterUserRequest(this.appKey, userName, password, email);
                     var res = YifyAPI.SendPostRequest(req);
-                    var rgu = ResponseParser.ParseRegisterUserResponse(res);
+                    var rgu = _parser.ParseRegisterUserResponse(res);
                     this.userKey = rgu.UserKey;
                     return rgu;
                 }
@@ -353,7 +367,7 @@ namespace YifyLib
                     var req = YifyAPI.GetForgotUserPasswordRequest(this.appKey, email);
                     var res = YifyAPI.SendPostRequest(req);
 
-                    var xDoc = ResponseParser.LoadXDoc(res);
+                    var xDoc = _parser.ToResponse(res);
                     return true;
                 }
                 catch (Exception ex) { throw new YifyException("An error occurred. See inner exception for more details", ex); }
@@ -368,6 +382,7 @@ namespace YifyLib
         ///  <exception cref="YifyLib.YifyMissingAppKeyException">If application key is missing</exception>
         ///  <exception cref="ArgumentException">If Reset Code or New Password is empty or null</exception>
         ///  <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", true)]
         public bool ResetUserPassword(string resetCode, string newPassword)
         {
             this.CheckAppKey();
@@ -381,7 +396,7 @@ namespace YifyLib
                 {
                     var req = YifyAPI.GetResetUserPasswordRequest(this.appKey, resetCode, newPassword);
                     var res = YifyAPI.SendPostRequest(req);
-                    var xDoc = ResponseParser.LoadXDoc(res);
+                    var xDoc = _parser.ToResponse(res);
                     return true;
                 }
                 catch (Exception ex) { throw new YifyException("An error occurred. See inner exception for more details", ex); }
@@ -396,6 +411,7 @@ namespace YifyLib
         ///  <exception cref="YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
         ///  <exception cref="ArgumentException">If movie id is invalid</exception>
         ///  <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", true)]
         public bool LikeMovie(int movieID)
         {
             this.CheckAppKey();
@@ -411,7 +427,7 @@ namespace YifyLib
                 {
                     var req = YifyAPI.GetLikeMovieReqeust(this.appKey, this.userKey, movieID);
                     var res = YifyAPI.SendPostRequest(req);
-                    var xDoc = ResponseParser.LoadXDoc(res);
+                    var xDoc = _parser.ToResponse(res);
                     return true;
                 }
                 catch (Exception ex) { throw new YifyException("An error occurred. See inner exception for more details", ex); }
@@ -424,6 +440,7 @@ namespace YifyLib
         /// <returns>Collection of Bookmarked Movie</returns>
         /// <exception cref="YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
         /// <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", true)]
         public List<BookmarkedMovie> BookmarkedMovies(bool withRtRatings)
         {
             this.CheckLoggedIn();
@@ -432,7 +449,7 @@ namespace YifyLib
 
                 var req = YifyAPI.GetMovieBookmarksURI(this.userKey, withRtRatings);
                 var res = YifyAPI.SendGetRequest(req);
-                return ResponseParser.ParseGetBookmarkedMoviesResponse(res);
+                return _parser.ParseGetBookmarkedMoviesResponse(res);
             }
             catch (Exception ex) { throw new YifyException("An error occurred. See inner exception for more details", ex); }
         }
@@ -445,6 +462,7 @@ namespace YifyLib
         /// <exception cref="YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
         /// <exception cref="ArgumentException">If movie id is invalid</exception>
         /// <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", true)]
         public bool AddMovieBookmark(int movieID)
         {
             this.CheckAppKey();
@@ -461,7 +479,7 @@ namespace YifyLib
                     var req = YifyAPI.GetAddMovieBookmarkReqeust(this.appKey, this.userKey, movieID);
                     var res = YifyAPI.SendPostRequest(req);
 
-                    var xDoc = ResponseParser.LoadXDoc(res);
+                    var xDoc = _parser.ToResponse(res);
                     return true;
                 }
                 catch (Exception ex) { throw new YifyException("An error occurred. See inner exception for more details", ex); }
@@ -476,6 +494,7 @@ namespace YifyLib
         /// <exception cref="YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
         /// <exception cref="ArgumentException">If movie id is invalid</exception>
         /// <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", true)]
         public bool DeleteMovieBookmark(int movieID)
         {
             this.CheckAppKey();
@@ -491,7 +510,7 @@ namespace YifyLib
                 {
                     var req = YifyAPI.GetDeleteMovieBookmarkReqeust(this.appKey, this.userKey, movieID);
                     var res = YifyAPI.SendPostRequest(req);
-                    var xDoc = ResponseParser.LoadXDoc(res);
+                    var xDoc = _parser.ToResponse(res);
                     return true;
                 }
                 catch (Exception ex) { throw new YifyException("An error occurred. See inner exception for more details", ex); }
@@ -507,6 +526,7 @@ namespace YifyLib
         /// <exception cref="YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
         /// <exception cref="ArgumentException">If movie id or comment text is null or empty</exception>
         /// <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", true)]
         public int MakeComment(int movieID, string commentText)
         {
             this.CheckAppKey();
@@ -523,10 +543,10 @@ namespace YifyLib
             {
                 var req = YifyAPI.GetMakeCommentReqeust(this.appKey, this.userKey, movieID, commentText);
                 var res = YifyAPI.SendPostRequest(req);
-                int parsed = ResponseParser.ParseMakeCommentResponse(res);
+                int parsed = _parser.ParseMakeCommentResponse(res);
                 try
                 {
-                    var xDoc = ResponseParser.LoadXDoc(res);
+                    var xDoc = _parser.ToResponse(res);
                     return -1;
                 }
                 catch (Exception ex) { throw new YifyException("An error occurred. See inner exception for more details", ex); }
@@ -541,6 +561,7 @@ namespace YifyLib
         /// <exception cref="YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
         /// <exception cref="ArgumentException">If comment id is invalid</exception>
         /// <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", true)]
         public bool LikeComment(int commentID)
         {
             this.CheckAppKey();
@@ -557,7 +578,7 @@ namespace YifyLib
                 {
                     var req = YifyAPI.GetLikeCommentReqeust(this.appKey, this.userKey, commentID);
                     var res = YifyAPI.SendPostRequest(req);
-                    var xDoc = ResponseParser.LoadXDoc(res);
+                    var xDoc = _parser.ToResponse(res);
                     return true;
                 }
                 catch (Exception ex) { throw new YifyException("An error occurred. See inner exception for more details", ex); }
@@ -572,6 +593,7 @@ namespace YifyLib
         /// <exception cref="YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
         /// <exception cref="ArgumentException">If comment id is invalid</exception>
         /// <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", true)]
         public bool ReportComment(int commentID)
         {
             this.CheckAppKey();
@@ -587,7 +609,7 @@ namespace YifyLib
                 {
                     var req = YifyAPI.GetReportCommentReqeust(this.appKey, this.userKey, commentID);
                     var res = YifyAPI.SendPostRequest(req);
-                    var xDoc = ResponseParser.LoadXDoc(res);
+                    var xDoc = _parser.ToResponse(res);
                     return true;
                 }
                 catch (Exception ex) { throw new YifyException("An error occurred. See inner exception for more details", ex); }
@@ -603,6 +625,7 @@ namespace YifyLib
         /// <exception cref="YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
         /// <exception cref="ArgumentException">If comment id is invalid</exception>
         /// <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", true)]
         public bool DeleteComment(int commentID)
         {
             this.CheckAppKey();
@@ -618,14 +641,14 @@ namespace YifyLib
                 {
                     var req = YifyAPI.GetDeleteCommentReqeust(this.appKey, this.userKey, commentID);
                     var res = YifyAPI.SendPostRequest(req);
-                    var xDoc = ResponseParser.LoadXDoc(res);
+                    var xDoc = _parser.ToResponse(res);
                     return true;
                 }
                 catch (Exception ex) { throw new YifyException("An error occurred. See inner exception for more details", ex); }
             }
         }
         /// <summary>
-        /// Make a request for a movie on YTS
+        /// Send a movie add request to YTS
         /// </summary>
         /// <param name="movieTitle">Title of the Movie</param>
         /// <param name="requestMessage">Message from user which can include a short description, IMDb links, 
@@ -635,6 +658,7 @@ namespace YifyLib
         /// <exception cref="YifyLib.YifyNotLoggedInException">If user has not logged in</exception>
         /// <exception cref="ArgumentException">If movie id or request message is null or empty</exception>
         /// <exception cref="YifyLib.YifyException">If any errors occurred YTS process</exception>
+        [Obsolete("Temporarily deprecated because YTS API is incomplete", true)]
         public bool MakeRequest(string movieTitle, string requestMessage)
         {
             this.CheckAppKey();
@@ -654,7 +678,7 @@ namespace YifyLib
                 {
                     var req = YifyAPI.GetMakeRequestReqeust(this.appKey, this.userKey, movieTitle, requestMessage);
                     var res = YifyAPI.SendPostRequest(req);
-                    var xDoc = ResponseParser.LoadXDoc(res);
+                    var xDoc = _parser.ToResponse(res);
                     return true;
                 }
                 catch (Exception ex) { throw new YifyException("An error occurred. See inner exception for more details", ex); }
@@ -671,6 +695,7 @@ namespace YifyLib
             get { return appKey; }
             set { appKey = value; }
         }
+
         /// <summary>
         /// Get or set the currently logged in user's user key
         /// </summary>
@@ -679,6 +704,7 @@ namespace YifyLib
             get { return userKey; }
             set { userKey = value; }
         }
+
         /// <summary>
         /// Get whether a user is currently logged in.
         /// </summary>
@@ -687,7 +713,9 @@ namespace YifyLib
             get { return !string.IsNullOrWhiteSpace(userKey); }
         }
 
-        #region Since version 1.1.7
+        /// <summary>
+        /// Get or set the base URI for YTS API
+        /// </summary>
         public Uri CurrentBaseUri
         {
             get
@@ -695,13 +723,38 @@ namespace YifyLib
                 Uri u = new Uri(YifyAPI.Base_URI.ToString(), UriKind.Absolute);
                 return u;
             }
-            set {
+            set
+            {
                 if (value != null)
                     YifyAPI.Base_URI = value;
             }
         }
-        #endregion
 
+        /// <summary>
+        /// Get or set the response parser which is used to parse YTS API responses
+        /// </summary>
+        public ResponseParser Parser
+        {
+            get { return _parser; }
+            set
+            {
+                if (value == null)
+                    _parser = new JSONResponseParser();
+                else
+                    _parser = value;
+
+                YifyAPI.RESPONSE_TYPE = _parser.SupportedResponseType;
+            }
+        }
+
+        /// <summary>
+        /// Proxy to be used
+        /// </summary>
+        public System.Net.IWebProxy Proxy
+        {
+            get { return YifyAPI.PROXY; }
+            set { YifyAPI.PROXY = value; }
+        }
         #endregion
     }
 }

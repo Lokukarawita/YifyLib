@@ -24,6 +24,11 @@ namespace YifyLib.Data
         public string CharacterName { get; set; }
 
         /// <summary>
+        /// IMDB code for this person
+        /// </summary>
+        public string IMDBCode { get; set; }
+
+        /// <summary>
         /// Get a string representation of this object
         /// </summary>
         /// <returns>Object in string</returns>
